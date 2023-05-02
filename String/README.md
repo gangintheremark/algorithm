@@ -39,7 +39,7 @@ char[] c = x.toCharArray(); // String 을 char형 배열로
 String tmp = String.valueOf(c); // 
 ```
 
-💡 이 문제에서 ArrayList<String> 자료형을 사용한 이유?
+💡 이 문제에서 ArrayList<String> 자료형을 사용한 이유?<br/>
 문자열을 저장하고 반환하는데 있어 String[] 자료형을 사용할 수도 있지만
 ArrayList는 문자열의 개수가 가변적일때도 처리하기 쉬우며, 동적으로 추가하거나 삭제할 수 있다는 장점이 있다. 본 코드에서도 add() 메서드를 사용해서 결과값을 ArrayList에 쉽게 추가했다는 점. 
 

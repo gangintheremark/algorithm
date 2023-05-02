@@ -7,7 +7,7 @@ import java.lang.StringBuilder;
 
 public class Main {
 
-    public ArrayList<String> solution(int n, String[] str) {
+    public ArrayList<String> solution(String[] str) {
         ArrayList<String> answer = new ArrayList<>();
 
         for (String x : str) {
@@ -26,7 +26,7 @@ public class Main {
         for (int i = 0; i < N; i++) {
             str[i] = s.next();
         }
-        for (String x : T.solution(N, str))
+        for (String x : T.solution(str))
             System.out.println(x);
     }
 }

@@ -2,16 +2,14 @@
 
 ```java
 str.toUpperCase();  // String형 변수 대문자 변환한 반환값
-Character.toUpperCase(t);  // char형 변수 대문자 변환한 반환값
+Character.toUpperCase(c);  // char형 변수 대문자 변환한 반환값
 
 str.charAt(i) // string 한 문자씩 읽기   
 
 // str.toCharArray
-for(char x : str.toCharArray()) // String 각 문자들을 char형 배열로 
-char c = s.next().charAt(0) // char 변수 입력받기
+str.toCharArray() // String 각 문자들을 char형 배열로 
+s.next().charAt(0) // char 변수 입력받기
 ```
-`for-each문` <br/>
-for(char형 변수 : char형 배열)   for(String형 변수 : String형 배열) 
 
 🐣`대소문자 변환`🐣
 ```
@@ -29,11 +27,12 @@ String[] s = str.split(" "); // 공백 기준으로 문장 자르기
 // indexOf(), substring() 
 while ((pos = str.indexOf(" ")) != -1) { // 공백 위치 찾기
     String tmp = str.substring(0, pos); // 공백 전까지 자르기 (0~pos)까지
-    // 길이가 가장 긴 지 체크 후 다시 반복 
+    
+    // 길이가 가장 긴 지 체크 후 다시 반복  ...
 }
 ```
 
-🐣`문장 뒤집기`🐣
+🐣`문장 뒤집기_01_`🐣
 ```java
 //java.lang.StringBuilder 
  StringBuilder sb = new StringBuilder(s.next()); // StringBuilder 
@@ -51,4 +50,18 @@ String tmp = String.valueOf(c); // char 배열을 String으로
 ArrayList는 문자열의 개수가 가변적일때도 처리하기 쉬우며, 동적으로 추가하거나 삭제할 수 있다는 장점이 있다. 
 
 즉, 크기가 고정적이고 변경이 필요하지 않은 경우에는 String[]<br/>
-크기가 가변적이거나 동적으로 변경되어야 하는 경우에는 ArrayList<String> 
+크기가 가변적이거나 동적으로 변경되어야 하는 경우에는 ArrayList<String>  <br/>
+
+🐣`특정 문장뒤집기`🐣
+```java
+Character.isAlphabetic(c) // 알파벳인지
+```
+
+🐣`중복문장 제거`🐣
+```java
+str.indexOf(str.charAt(i)) // str.indexOf('A') str에서 A의 위치 (처음위치)
+```
+
+`for-each문` <br/>
+for(char형 변수 : char형 배열)  <br/> 
+for(String형 변수 : String형 배열) <br/><br/>

@@ -1,7 +1,6 @@
 package ch01.String;
 
 import java.util.*;
-import java.lang.StringBuilder;
 
 /* 문장뒤집기 ( 입력 후 한꺼번에 출력) */
 

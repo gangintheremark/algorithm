@@ -62,6 +62,20 @@ Character.isAlphabetic(c) // 알파벳인지
 str.indexOf(str.charAt(i)) // str.indexOf('A') str에서 A의 위치 (처음위치)
 ```
 
-`for-each문` <br/>
+🐣`회문문자열`🐣
+```java
+// StringBuilder를 이용하여 역순으로 재배치 후 비교
+String tmp = new StringBuilder(str).reverse().toString(); 
+
+str.equals(tmp); // 문자열 비교 
+str.equalsIngnoreCase(tmp); // 대소문자 무시하고 비교 
+```
+
+🐣`팰린드롬 (replaceAll 정규식 이용)`🐣
+```
+str = str.toUpperCase().replaceAll("[^A-Z]","");  //A-Z가 아닌 것은 전부 ""로 대체 
+```
+
+👀`for-each문` <br/>
 for(char형 변수 : char형 배열)  <br/> 
 for(String형 변수 : String형 배열) <br/><br/>

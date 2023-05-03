@@ -12,7 +12,7 @@ s.next().charAt(0) // char 변수 입력받기
 ```
 
 🐣`대소문자 변환`🐣
-```
+```java
 Character.toUpperCase(t); // 반환값이므로 char c = Character.toUpperCase(t); 이런 형태
 String answer 👉 answer += c;
 ArrayList<String> answer 👉 anwser.add(c);

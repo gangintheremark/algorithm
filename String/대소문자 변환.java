@@ -1,7 +1,6 @@
 package ch01.String;
 
 import java.util.*;
-import java.lang.StringBuilder;
 
 public class Main {
     public String solution(String str) {

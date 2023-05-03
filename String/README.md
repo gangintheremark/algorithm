@@ -72,10 +72,29 @@ str.equalsIngnoreCase(tmp); // 대소문자 무시하고 비교
 ```
 
 🐣`팰린드롬 (replaceAll 정규식 이용)`🐣
-```
+```java
 str = str.toUpperCase().replaceAll("[^A-Z]","");  //A-Z가 아닌 것은 전부 ""로 대체 
 ```
 
-👀`for-each문` <br/>
+🐣`숫자만 추출`🐣
+```java
+//isDigit() 사용
+Character.isDigit(x) // 숫자면 true
+if (x >= 48 && x <= 57) // 숫자면 (아스키코드)
+     answer = answer * 10 + (x - 48);  // 앞에 0일때 0없애고 숫자만들기 
+```
+💡 `헷갈렸던 부분`<br/>
+문자열의 첫번째 문자가 0인지 비교하려면 str.charAt(0) == '0' 처럼 따옴표를 사용하여 문자0과 비교해야한다. <br/>
+맨 앞 0을 없애려 앞으로 한 칸씩 땡긴다는 생각을 했는데 문자열은 불변하기 때문에 str.charAt(i)와 같이 특정 인덱스 값을 직접 수정할 수 없다. <br/>
+~~근데 isDigit 메소드 있는거 왜 마지막에 알려쥼? 진작이거쓰면 됐잖아!!!!!~~ 
+<br/>
+
+🐣`문자열 압축`🐣
+```java
+str = str + " ";  // 핵심 
+ answer += String.valueOf(count); // String 문자열에 int 숫자 + 하기
+```
+
+💡`for-each문` <br/>
 for(char형 변수 : char형 배열)  <br/> 
 for(String형 변수 : String형 배열) <br/><br/>

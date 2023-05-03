@@ -1,6 +1,6 @@
 ```java
 
-/*  String_FunC  */
+/*  String_Func  */
         String s, s1, s2;
         
         //대소문자 변환

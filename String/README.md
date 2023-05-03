@@ -1,7 +1,8 @@
 ```java
 
 /*  String_FunC  */
-
+        String s, s1, s2;
+        
         //대소문자 변환
         s.toUpperCase(); //대문자로
         s.toLowerCase(); //소문자로

@@ -11,7 +11,6 @@ public class Main {
             str = str.substring(7); // index 기준 7번째부터 시작 (이전내용 삭제)
         }
     }
-
     public static void main(String[] args) {
         Main T = new Main();
         Scanner s = new Scanner(System.in);

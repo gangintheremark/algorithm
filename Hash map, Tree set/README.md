@@ -1,4 +1,4 @@
-**`HashMap`**
+**`HashMap`** </br>
 key : value 구조
 ```java
 HashMap<Character, Integer> map = new HashMap<>(); // Hashmap<key, value> 설정
@@ -11,7 +11,7 @@ map.size(); // 키의 개수
 map.remove('A'); // 'A' 키 제거 
 ```
 
-**`TreeSet`**
+**`TreeSet`** </br>
 중복 제거 및 순서 정렬 자료구조 (정렬지원 set)
 ```java
 TreeSet<Integer> Tset = new TreeSet<>(); // 오름차순의 treeset
@@ -23,7 +23,7 @@ Tset.first();  // 오름차순에선 최소값, 내림차순에선 최대값
 Tset.last();   // 오름차순에선 최대값, 내림차순에선 최소값
 ```
 
-☃️`학급 회장`☃️
+☃️`학급 회장`☃️ </br>
 HashMap
 ```java
  for (char key : map.keySet()) {
@@ -35,7 +35,7 @@ HashMap
         }
 ```
 
-☃️`Anagram (아나그램)`☃️
+☃️`Anagram (아나그램)`☃️ </br>
 두 문자열의 알파벳 나열 순서는 다르지만 알파벳 구성이 일치하면 두 단어는 아나그램이라고 한다.
 ```java
 if (!map.containsKey(x) || map.get(x) == 0) //x 라는 키가 존재하지 않거나 x 키 값이 0이면
@@ -45,7 +45,7 @@ map.put(x, map.get(x) - 1);  // 값이 존재하면 -1 해준다.
 // 최종적으로 모든 키 값이 0이되면 두 문자열은 일치
 ```
 
-☃️`매출액의 종류`☃️ 
+☃️`매출액의 종류`☃️  </br>
 HashMap + Sliding window ⭐️
 ```java
  for (int i = 0; i < k; i++) {  //윈도우값 셋팅
@@ -63,7 +63,7 @@ HashMap + Sliding window ⭐️
         }
 ```
 
-☃️`모든 아나그램 찾기`☃️
+☃️`모든 아나그램 찾기`☃️ </br>
 HashMap + Sliding window
 ```java
 // 문자열을 hashmap에 넣기
@@ -74,7 +74,7 @@ HashMap + Sliding window
             am.put(a.charAt(i), am.getOrDefault(a.charAt(i), 0) + 1);
 ```
 
-☃️`K번째 큰 수`☃️
+☃️`K번째 큰 수`☃️ </br>
 treeSet 
 ```java
 for (int i = 0; i < n; i++)

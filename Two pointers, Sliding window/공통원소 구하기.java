@@ -1,6 +1,6 @@
 import java.util.*;
 
-
+/* two pointers */
 public class Main {
 
     public ArrayList<Integer> solution(int n, int m, int[] a, int[] b) {

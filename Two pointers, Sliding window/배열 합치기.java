@@ -1,6 +1,6 @@
 import java.util.*;
 
-
+/* two pointers */
 public class Main {
     // 두 배열 합치기 [효율적으로]
     public ArrayList<Integer> solution(int n, int m, int[] a, int[] b) {

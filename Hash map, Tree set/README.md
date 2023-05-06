@@ -1,5 +1,5 @@
 ### **`HashMap`** 
-👉 key : value 구조
+key : value 구조
 ```java
 HashMap<Character, Integer> map = new HashMap<>(); // Hashmap<key, value> 설정
 map.put(x, map.getOrDefault(x, 0));  // hashmap 갱신
@@ -12,7 +12,7 @@ map.remove('A'); // 'A' 키 제거
 ```
 
 ### **`TreeSet`** 
-👉 중복 제거 및 순서 정렬 자료구조 (정렬지원 set)
+중복 제거 및 순서 정렬 자료구조 (정렬지원 set)
 ```java
 TreeSet<Integer> Tset = new TreeSet<>(); // 오름차순의 treeset
 TreeSet<Integer> Tset = new TreeSet<>(Collections.reverseOrder()); // 내림차순의 treeset

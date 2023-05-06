@@ -14,7 +14,7 @@ public class Main {
         int answer = 1;
         Queue<Person> Q = new LinkedList<>();
         for (int i = 0; i < n; i++) {
-            Q.add(new Person(i, arr[i]));  // add()메소드
+            Q.add(new Person(i, arr[i]));  // add() 메소드
         }
         while (!Q.isEmpty()) {
             Person tmp = Q.poll();

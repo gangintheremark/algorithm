@@ -11,7 +11,7 @@ public class Main {
             for (int i = 1; i < k ; i++)  Q.offer(Q.poll());  // k값 만큼 뒤로 보내기
 
             Q.poll(); // k번째는 poll 
-            if (Q.size() == 1)  // 마지막 남았는 게 정답
+            if (Q.size() == 1)  // 마지막 남았는게 정답
                 answer = Q.poll();
         }
         return answer;

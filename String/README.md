@@ -39,6 +39,8 @@
         String tmp = String.valueOf(c) // char형 배열을 String형으로
         String answer += String.valueOf(count);  // String 문자열에 정수 추가
 
+        str.toUpperCase().replaceAll("[^A-Z]","");  //A-Z가 아닌 것은 전부 replace
+
 ```
 
 

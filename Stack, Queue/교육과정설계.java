@@ -8,8 +8,7 @@ public class Main {
         for(char x : n.toCharArray())  Q.offer(x);  // 큐에 CBA 넣기  
         for(char x : k.toCharArray()) { 
                 if (Q.contains(x)) {  // 필수과목에 포함되었는데
-                    if(x != Q.poll()) return "NO";  // 순서와 다르면 NO
-                }
+                    if(x != Q.poll()) return "NO";  // 이수 순서가 다르면 NO
             }
         if(!Q.isEmpty()) return "NO";
         return answer;

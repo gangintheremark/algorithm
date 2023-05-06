@@ -1,4 +1,5 @@
 ### **`Stack`**
+![Stack](https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Data_stack.svg/300px-Data_stack.svg.png)
 ```java
 Stack<Character> stack = new Stack<>();
 stack.push(x);
@@ -10,6 +11,7 @@ stack.size(); // stack에 있는 원소의 개수
 ```
 
 ### **`Queue`**
+![Queue](https://blog.kakaocdn.net/dn/bhvAPe/btqHlVqf0RY/Y4oCoA4wUkEpvIkU80i43K/img.png)
 ```java
  Queue<Integer> Q = new LinkedList<>();
  Q.offer(x); 
@@ -47,7 +49,6 @@ answer = stack.get(0);  // 스택값 넣기
 ```java
 Q.offer(Q.poll); // 맨 앞 것을 뒤로보내기 
 ```
-
 
 🦝`응급실`🦝
 ```java

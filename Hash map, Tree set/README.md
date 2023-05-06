@@ -1,5 +1,4 @@
-**`HashMap`** </br>
-key : value 구조
+**`HashMap`** 👉 key : value 구조
 ```java
 HashMap<Character, Integer> map = new HashMap<>(); // Hashmap<key, value> 설정
 map.put(x, map.getOrDefault(x, 0));  // hashmap 갱신
@@ -11,8 +10,7 @@ map.size(); // 키의 개수
 map.remove('A'); // 'A' 키 제거 
 ```
 
-**`TreeSet`** </br>
-중복 제거 및 순서 정렬 자료구조 (정렬지원 set)
+**`TreeSet`** 👉 중복 제거 및 순서 정렬 자료구조 (정렬지원 set)
 ```java
 TreeSet<Integer> Tset = new TreeSet<>(); // 오름차순의 treeset
 TreeSet<Integer> Tset = new TreeSet<>(Collections.reverseOrder()); // 내림차순의 treeset
@@ -24,8 +22,8 @@ Tset.last();   // 오름차순에선 최대값, 내림차순에선 최소값
 ```
 
 ☃️`학급 회장`☃️ </br>
-HashMap
 ```java
+//HashMap
  for (char key : map.keySet()) {
            // System.out.println(x + " " + map.get(key));
             if (map.get(key) > max){
@@ -46,8 +44,8 @@ map.put(x, map.get(x) - 1);  // 값이 존재하면 -1 해준다.
 ```
 
 ☃️`매출액의 종류`☃️  </br>
-HashMap + Sliding window ⭐️
 ```java
+// HashMap + Sliding window 
  for (int i = 0; i < k; i++) {  //윈도우값 셋팅
             map.put(arr[i], map.getOrDefault(arr[i], 0)+1);
         }
@@ -64,9 +62,8 @@ HashMap + Sliding window ⭐️
 ```
 
 ☃️`모든 아나그램 찾기`☃️ </br>
-HashMap + Sliding window
 ```java
-// 문자열을 hashmap에 넣기
+// HashMap + Sliding window
         for (char x : b.toCharArray())
             bm.put(x, bm.getOrDefault(x, 0) + 1);
 
@@ -75,8 +72,8 @@ HashMap + Sliding window
 ```
 
 ☃️`K번째 큰 수`☃️ </br>
-treeSet 
 ```java
+// treeSet 
 for (int i = 0; i < n; i++)
             for (int j = i + 1; j < n; j++)
                 for (int l = j + 1; l < n; l++)   // n개 중 3장 뽑는 모든 경우의 수 

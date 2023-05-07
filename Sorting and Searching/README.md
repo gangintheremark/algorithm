@@ -57,13 +57,13 @@ while (lt <= rt) {
 ```
 ### **결정 알고리즘** </br>
 lt ~ rt 사이에 찾고싶은 답이 분명히 있다라는 확신이 있는 문제에 적용
+- ![뮤직비디오](https://github.com/gangintheremark/Algorithm/blob/master/Sorting%20and%20Searching/%EB%AE%A4%EC%A7%81%EB%B9%84%EB%94%94%EC%98%A4.java)
 
 🐸`LRU`🐸 </br>
 LRU : Least Recently Used
 ```java
 int pos = -1; // pos -1로 초기화하고 1.특정 위치 i로 바뀜 2. 안바뀜 
 ```
-
 
 🐸`중복 확인`🐸
 ```java
@@ -108,6 +108,7 @@ int n = s.nextInt();
 🐸`뮤직비디오`🐸 </br>
 결정알고리즘
 ```java
+// Arrays.stream() 메소드 사용!
  int lt = Arrays.stream(arr).max().getAsInt();  // 배열에서 최대를 int형으로 return
  int rt = Arrays.stream(arr).sum(); // 배열에서 모든 값을 합한 값
 ```

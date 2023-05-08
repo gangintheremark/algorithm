@@ -57,7 +57,8 @@ while (lt <= rt) {
 ```
 ### **결정 알고리즘** </br>
 lt ~ rt 사이에 찾고싶은 답이 분명히 있다라는 확신이 있는 문제에 적용
-- ![뮤직비디오](https://github.com/gangintheremark/Algorithm/blob/master/Sorting%20and%20Searching/%EB%AE%A4%EC%A7%81%EB%B9%84%EB%94%94%EC%98%A4.java)
+- [뮤직비디오](https://github.com/gangintheremark/Algorithm/blob/master/Sorting%20and%20Searching/%EB%AE%A4%EC%A7%81%EB%B9%84%EB%94%94%EC%98%A4.java)
+- [마구간 정하기]
 
 🐸`LRU`🐸 </br>
 LRU : Least Recently Used

@@ -4,7 +4,7 @@ public class Main {
     public char solution(int n, int[] arr) {
         char answer = 'U';
 
-        Arrays.sort(arr);
+        Arrays.sort(arr);  // 배열 정렬 후 
         for (int i = 0; i < n-1; i++) {
             if(arr[i] == arr[i+1]) return 'D';
         }

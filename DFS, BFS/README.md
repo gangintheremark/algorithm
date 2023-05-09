@@ -2,8 +2,11 @@
 - 모든 노드를 방문하고자 하는 경우
 - [부분집합 구하기]
 </br>
-- `이진트리순회` </br>
-![이진트리](https://user-images.githubusercontent.com/28912774/120569404-ce26a900-c450-11eb-8be6-c72bae145569.png)
+
+`이진트리순회`</br>
+
+![binary tree](https://user-images.githubusercontent.com/28912774/120569404-ce26a900-c450-11eb-8be6-c72bae145569.png) </br>
+ 
   - 전위순회 : 1 - 2 - 4 - 5 - 3 - 6 - 7
   - 중위순회 : 4 - 2 - 5 - 1 - 6 - 3 - 7
   - 후위순회 : 4 - 5 - 2 - 6 - 7 - 3 - 1

@@ -1,6 +1,6 @@
 ```java
 
-/*  String_Func  */
+/*  String method  */
         String s, s1, s2;
         
         //대소문자 변환
@@ -29,6 +29,17 @@
 
         s1.equals(s2); // 내용이 같은가
         s1 == s2; // 참조하는 곳이 같은가
+
+        Character.isAlphabetic(c)  // 알파벳인지
+        Character.isDigit(x)  // 숫자인지
+
+        // StringBuilder를 이용하여 역순으로 재배치 후 다시 String 형으로
+        String tmp = new StringBuilder(str).reverse().toString();  
+        
+        String tmp = String.valueOf(c) // char형 배열을 String형으로
+        String answer += String.valueOf(count);  // String 문자열에 정수 추가
+
+        str.toUpperCase().replaceAll("[^A-Z]","");  //A-Z가 아닌 것은 전부 replace
 
 ```
 
@@ -121,7 +132,7 @@ if (x >= 48 && x <= 57) // 숫자면 (아스키코드)
 💡 `헷갈렸던 부분`<br/>
 문자열의 첫번째 문자가 0인지 비교하려면 str.charAt(0) == '0' 처럼 따옴표를 사용하여 문자0과 비교해야한다. <br/>
 맨 앞 0을 없애려 앞으로 한 칸씩 땡긴다는 생각을 했는데 문자열은 불변하기 때문에 str.charAt(i)와 같이 특정 인덱스 값을 직접 수정할 수 없다. <br/>
-~~근데 isDigit 메소드 있는거 왜 마지막에 알려쥼? 진작이거쓰면 됐잖아!!!!!~~ 
+~~근데 isDigit 메소드 있는거 왜 마지막에 알려쥼? 진작이거쓰면 됐잖아~~ 
 <br/>
 
 🐣`가장 짧은 문자거리`🐣

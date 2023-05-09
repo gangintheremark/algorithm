@@ -30,6 +30,7 @@ for (int i = 2; i < n; i++)
  answer = answer * 10 + arr[i] % 10; // 핵심!!
 ```
 
+<<<<<<< HEAD
 🐷`등수구하기`🐷
 이중 for문 이용해서 배열 하나를 배열 모두와 비교하는 구조 </br>
 
@@ -47,3 +48,16 @@ for (int i = 2; i < n; i++)
 int[] dx = {1, 0, 1, 0}   int[] dy = {0, 1, 0, -1} </br>
 지정 후 i,j,k 3중 for문 으로 해결 </br></br>
  
+=======
+ // 소수인지 아닌지 체크
+  public boolean isPrime(int num) {
+        if (num == 1)
+            return false;
+        for (int i = 2; i < num; i++) 
+            if (num % i == 0)
+                return false;
+        return true;
+    }
+```
+
+>>>>>>> f34ea4790b8b9d650e072646cf62a829e25fb8ee

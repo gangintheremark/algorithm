@@ -1,6 +1,5 @@
 import java.util.*;
 
-// 메모참고
 public class Main {
     int answer = 0;
     int[] dis = {-1, 1, 5};

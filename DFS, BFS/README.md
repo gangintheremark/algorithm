@@ -1,7 +1,5 @@
 `깊이우선탐색(DFS, Depth-First Search)` </br>
 - 모든 노드를 방문하고자 하는 경우
-- [부분집합 구하기]
-</br>
 
 `이진트리순회`</br>
 
@@ -45,15 +43,129 @@
 ----
 
 `넓이우선탐색(BFS, Breadth-First Search)` </br>
-- 두 노드 사이의 최단 경로 혹은 임의의 경로를 찾고 싶은 경우
-</br>
+- 두 노드 사이의 최단 경로 혹은 임의의 경로를 찾고 싶은 경우 </br>
 
-- [이진트리 레벨탐색](https://github.com/gangintheremark/Algorithm/blob/master/DFS%2C%20BFS/%EC%9D%B4%EC%A7%84%ED%8A%B8%EB%A6%AC%20%EB%A0%88%EB%B2%A8%ED%83%90%EC%83%89.java)
+`그래프`
+```java
+//  무방향 그래프
+graph[a][b] = 1;
+graph[b][a] = 1;
 
-- [송아지찾기](https://github.com/gangintheremark/Algorithm/blob/master/DFS%2C%20BFS/%EC%86%A1%EC%95%84%EC%A7%80%20%EC%B0%BE%EA%B8%B0.java)
+// 방향 그래프
+graph[a][b] = 1;
+
+// 가중치 방향 그래프
+graph[a][b] = c;
+
+```
+
+#### DFS
+
+🐌`부분집합 구하기`🐌
+```java
+ if (L == n + 1) { // 종착점에 왔을 경우,
+    String tmp = "";
+    for (int i = 1; i <= n; i++) {
+    if (ch[i] == 1) // 사용했다면
+        tmp += (i + " ");
+    }
+    if (tmp.length() > 0)
+        System.out.println(tmp);
+} 
+else {
+    ch[L] = 1; // 사용한다
+    DFS(L + 1); // 사용한다로 뻗는 함수
+    ch[L] = 0; // 사용하지 않는다.
+    DFS(L + 1); // 사용하지 않는다로 뻗는 함수
+}
+```
+
+🐌`경로탐색`🐌
+```java
+for (int i = 1; i <= n; i++) {
+    if (graph[v][i] == 1 && ch[i] == 0) { 
+    // v노드에서 갈 수 있는 방향인가 && 한번도 방문하지 않은 노드인가
+        ch[i] = 1; // 방문표시
+        DFS(i);  // recursion
+        ch[i] = 0; // Back 하면서 체크 풀어주기
+    }
+}
+```
+
+🐌`경로탐색(인접리스트)`🐌
+```java
+static ArrayList<ArrayList<Integer>> graph; //arraylist 속 arraylist
+ graph = new ArrayList<ArrayList<Integer>>(); // graph 객체 생성
+    for (int i = 0; i <= n; i++) {
+        graph.add(new ArrayList<Integer>()); // 객체 생성
+    }
+// ...
+ for (int nv : graph.get(v)) { // v번이 갈 수 있는 리스트
+                if (ch[nv] == 0) { // 방문안했으면
+                    ch[nv] = 1; // 방문 표시
+                    DFS(nv); // recursion
+                    ch[nv] = 0; // Back 하면서 체크 풀어주기
+                }
+            }
+```
+
+#### BFS
+
+```java
+Queue<Node> Q = new LinkedList<>();
+Q.offer(root);
+int L = 0;
+while (!Q.isEmpty()) {
+    int len = Q.size(); 
+    for (int i = 0; i < len; i++) { // 큐 길이만큼 반복
+        Node cur = Q.poll(); // Q 가져오기
+        System.out.print(cur.data + " ");
+        if (cur.lt != null) Q.offer(cur.lt); // 왼쪽 자식이 있으면 offer
+        if (cur.rt != null) Q.offer(cur.rt); // 오른쪽 자식이 있으면 offer
+    }
+    L++; // Level 1증가
+}
+```
 
 🐌`송아지찾기`🐌
 ```java
-// 최단 경로 찾기
 int[] dis = {-1, 1, 5}; // 뻗어나갈 수 있는 경우
+// ...
+ch[s] = 1;  // 방문하면 1 
+Q.offer(s);
+int L = 0;
+while (!Q.isEmpty()) {
+    int len = Q.size();
+    for (int i = 0; i < len; i++) {
+        int x = Q.poll();
+        for (int j = 0; j < 3; j++) {
+            int nx = x + dis[j];  // nx : x의 자식노드
+            if (nx == e) return L;  // 경로를 찾으면 return
+            if (nx >= 1 && nx <= 10000 && ch[nx] == 0) {  // 방문 안한 것인지
+                ch[nx] = 1; // 방문
+                Q.offer(nx); 
+            }
+        }
+    }
+    L++; // Level 1증가
+}
 ```
+
+🐌`말단노드까지 가장 가까운 거리`🐌
+```java
+ Queue<Node> Q = new LinkedList<>();
+Q.offer(root);
+int L = 0; // 다음 층수로 간 횟수? 거리??같은 느낌
+while (!Q.isEmpty()) {
+    int len = Q.size();
+    for (int i = 0; i < len; i++) {
+        Node x = Q.poll();
+        if (x.lt == null && x.rt == null) return L; // 말단노드면 L리턴
+        if (x.lt != null) Q.offer(x.lt);
+        if (x.rt != null) Q.offer(x.rt);
+    }
+    L++;
+}
+```
+
+

@@ -79,15 +79,13 @@ Arrays.sort(arr, Collections.reverseOrder());
 **III. 조합 활용**
 
 🍓`수열 추측하기`🍓</br>
-Q. 삼각형 가장 위에 들어갈 n개의 숫자찾기</br>
-삼각형에서 가장 위에 들어갈 숫자와 n-1 조합을 곱한 값의 합이 f</br>
-3 1 2 4</br>
- 4 3 6</br>
-  7 9</br>
-   16</br>
--> 3 x 3C0 + 1 x 3C1 + 2 x 3C2 + 3 x 3C3 = 16</br>
-      
-
+Q. 삼각형 가장 위에 들어갈 n개의 숫자찾기
+삼각형에서 가장 위에 들어갈 숫자와 n-1 조합을 곱한 값의 합이 f
+3 1 2 4
+ 4 3 6
+  7 9
+   16
+-> 3 x <sub>3</sub>C<sub>0</sub> + 1 x <sub>3</sub>C<sub>1</sub> + 2 x <sub>3</sub>C<sub>2</sub> + 3 x <sub>3</sub>C<sub>3</sub> = 16
 
 🍓`조합 구하기`🍓</br>
 1부터 N까지의 번호가 적힌 OO이 있다. 이 중 M개를 뽑는 방법의 수 👉 조합문제 유형
@@ -102,4 +100,46 @@ else {
 
 </br>
 
+🍓`미로탐색`🍓
+
+```java
+static int[] dx = {-1, 0, 1, 0}; // 12시 - 3시 - 6시 - 9시 방향
+static int[] dy = {0, 1, 0, -1};
+// ...
+ else {
+            for (int i = 0; i < 4; i++) {  // 4방향
+                int nx = x + dx[i];
+                int ny = y + dy[i];
+                if (nx >= 1 && nx <= 7 && ny >= 1 && ny <= 7 && board[nx][ny] == 0) { //내가 갈 수 있는 길
+                    board[nx][ny] = 1; // 지나간 길은 체크
+                    DFS(nx, ny);
+                    board[nx][ny] = 0; //백트래킹
+                }
+            }
+        }
+```
+
+</br>
+
 ### `BFS`
+
+🍒`미로의 최단거리 `🍒
+```java
+ public void BFS(int x, int y) {
+        Queue<Point> Q = new LinkedList<>();
+        Q.offer(new Point(x, y));
+        board[x][y] = 1; //출발지는 1
+        while (!Q.isEmpty()) {
+            Point tmp = Q.poll();
+            for (int i = 0; i < 4; i++) {
+                int nx = tmp.x + dx[i];
+                int ny = tmp.y + dy[i];
+                if (nx >= 1 && nx <= 7 && ny >= 1 && ny <= 7 && board[nx][ny] == 0) {
+                    board[nx][ny] = 1; // 방문
+                    Q.offer(new Point(nx, ny));
+                    dist[nx][ny] = dist[tmp.x][tmp.y] + 1;
+                }
+            }
+        }
+    }
+```

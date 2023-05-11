@@ -1,6 +1,31 @@
 `메모이제이션`</br>
 컴퓨터 프로그램이 동일한 계산을 반복해야 할 때, 이전에 계산한 값을 메모리에 저장함으로써 동일한 계산의 반복 수행을 제거하여 프로그램 실행 속도를 빠르게 하는 기술
 
+🙉`피보나치(메모이제이션)`🙉 </br>
+###### 코딩 인터뷰에서 자주 질문⭐️⭐️⭐️
+```java
+static int[] fibo;  // 피보나치 수열 값을 저장할 배열 선언
+public int DFS(int n) {
+    if(fibo[n] > 0 ) return fibo[n];  // 메모이제이션 ⭐️
+    if (n < 2) return fibo[n] = 1;
+    else
+        return fibo[n] = DFS(n - 1) + DFS(n - 2);
+}
+/* 👆 n이 2 이상일때, 3이상이면 n==1 return 1; n==2 return 1; */
+```
+
+🙉`조합 수(메모이제이션)`🙉 </br>
+###### DFS, BFS 활용 - 수열 추측하기 문제에서 사용 
+```java
+int[][] dy = new int[35][35];
+public int DFS(int n, int r) {
+    if (dy[n][r] > 0) return dy[n][r];   // 메모이제이션 ⭐️
+    if (n == r || r == 0) return 1;
+    else 
+        return dy[n][r] = DFS(n - 1, r - 1) + DFS(n - 1, r);
+    }
+```
+
 🙉`재귀함수`🙉</br>
 ###### 스택프레임으로 생각하고 해결
 ```java
@@ -29,19 +54,6 @@ public int DFS(int n) {
     else
         return n + DFS(n-1);
 }
-```
-
-🙉`피보나치(메모이제이션)`🙉 </br>
-###### 코딩 인터뷰에서 자주 질문⭐️⭐️⭐️
-```java
-static int[] fibo;  // 피보나치 수열 값을 저장할 배열 선언
-public int DFS(int n) {
-    if(fibo[n] > 0 ) return fibo[n];  // 메모이제이션 ⭐️
-    if (n < 2) return fibo[n] = 1;
-    else
-        return fibo[n] = DFS(n - 1) + DFS(n - 2);
-}
-/* 👆 n이 2 이상일때, 3이상이면 n==1 return 1; n==2 return 1; */
 ```
 
 

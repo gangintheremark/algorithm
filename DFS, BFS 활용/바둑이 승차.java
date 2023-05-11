@@ -5,11 +5,9 @@ public class Main {
     static int[] arr;
 
     public void DFS(int L, int sum) {
+        if (sum > c) return;
         if (L == n) {
-            if (c >= sum) {
-                answer = Math.max(sum, tmp);
-                tmp = answer;
-            }
+            answer = Math.max(sum, answer);
         } else {
             DFS(L + 1, sum + arr[L]); // 태운다
             DFS(L + 1, sum); //안태운다

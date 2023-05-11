@@ -1,7 +1,7 @@
-`Greedy Algorithm`
+### **`Greedy Algorithm`**
 
 `Comparable`
-##### 정렬하는 기준을 잡아주는 Comparable
+정렬하는 기준을 잡아주는 Comparable
 ```java
 class Point implements Comparable<Point> { 
     public int x, y;
@@ -60,16 +60,11 @@ for (Body o : arr) {
 ```
 
 `PriorityQueue` </br>
-##### 큐에서 가장 큰 값 또는 가장 작은 값을 우선으로 poll하는 큐 
+큐에서 가장 큰 값 또는 가장 작은 값을 우선으로 poll하는 큐 
 
 </br>
 
 🦔`최대수입 스케줄`🦔
 ```java
- int count = 0; // 동시에 존재하는 인원
-        for (Time o : arr) {
-            if (o.state == 's') count++;  // 's' 입장한 상태 
-            else count--;  // 'e'는 나간 상태 
-            answer = Math.max(answer, count);
-        }
+ PriorityQueue<Integer> PQ = new PriorityQueue<>(Collections.reverseOrder()); // 큰 값을 우선으로 뽑는다.  
 ```

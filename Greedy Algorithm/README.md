@@ -60,7 +60,7 @@ for (Body o : arr) {
 
 ----
 
-### `PriorityQueue` </br>
+#### `PriorityQueue` </br>
 큐에서 가장 큰 값 또는 가장 작은 값을 우선으로 poll하는 큐 
 
 </br>
@@ -111,7 +111,7 @@ public static void Union(int a, int b) { // a와 b를 하나의 집합으로 만
 
 ----
 
-`MST, Minimum Spanning Tree` : 최소신장(스패닝)트리 
+#### `MST, Minimum Spanning Tree` : 최소신장(스패닝)트리 
 1. `크루스칼 알고리즘`
 - 간선의 가중치 합이 최소가 되도록 그래프에서 일부 간선을 선택해서 만든 트리 
 - n개의 정점에 (n-1)개의 간선으로 연결된다 👉 사이클이 없다!!

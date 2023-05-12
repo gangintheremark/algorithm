@@ -1,7 +1,6 @@
 ### **`Greedy Algorithm`**
 
-`Comparable`</br>
-정렬하는 기준을 잡아주는 Comparable
+`Comparable` : 정렬하는 기준을 잡아주는 Comparable
 ```java
 class Point implements Comparable<Point> { 
     public int x, y;
@@ -68,18 +67,22 @@ for (Body o : arr) {
 
 🦔`최대수입 스케줄`🦔
 ```java
- PriorityQueue<Integer> PQ = new PriorityQueue<>(Collections.reverseOrder()); // 큰 값을 우선으로 뽑는다.  
+ // 작은 값을 우선으로 뽑는다.  
+  PriorityQueue<Integer> PQ = new PriorityQueue<>();
+
+ // 큰 값을 우선으로 뽑는다.  
+ PriorityQueue<Integer> PQ = new PriorityQueue<>(Collections.reverseOrder()); 
 ```
 
 ----
 
-### `Dijkstra 알고리즘` </br>
+`Dijkstra 알고리즘` </br>
 - 대표적인 **최단 경로탐색 알고리즘**이다. 기본적으로 다익스트라는 하나의 최단 거리를 구할 때 그 이전까지 구했던 최단 거리 정보를 그대로 사용한다는 특징
 - 방향 가중치 그래프
 
 ---- 
 
-### `Disjoing-Set : Union&Finde` : **서로소** 집합 </br>
+`Disjoing-Set : Union&Finde` : **서로소** 집합 </br>
 ###### 암기 ⭐️⭐️
 ```java
 public static int Find(int v) { /
@@ -108,10 +111,11 @@ public static void Union(int a, int b) { // a와 b를 하나의 집합으로 만
 
 ----
 
-### `MST, Minimum Spanning Tree` : 최소신장(스패닝)트리 
+`MST, Minimum Spanning Tree` : 최소신장(스패닝)트리 
 1. `크루스칼 알고리즘`
 - 간선의 가중치 합이 최소가 되도록 그래프에서 일부 간선을 선택해서 만든 트리 
 - n개의 정점에 (n-1)개의 간선으로 연결된다 👉 사이클이 없다!!
 
-2. `프림 알고리즘` 👉 Priority Queue
+2. `프림 알고리즘` 
+- Priority Queue 이용 
 - 무방향 가중치 그래프

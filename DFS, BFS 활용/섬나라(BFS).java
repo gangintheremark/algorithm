@@ -38,7 +38,7 @@ public class Main {
                 if (board[i][j] == 1) { // 섬 발견
                     answer++;
                     board[i][j] = 0; // 출발점을 0으로 하고 뻗어나가기
-                    BFS(i, j); // 주변에 있는 섬(1)들 0으로 바꾸기
+                    BFS(i, j); // 주변에 있는 섬(1)들 0으로 바꾸기 위한 BFS
                 }
             }
         }

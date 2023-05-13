@@ -60,8 +60,10 @@ lt ~ rt 사이에 찾고싶은 답이 분명히 있다라는 확신이 있는 �
 - [뮤직비디오](https://github.com/gangintheremark/Algorithm/blob/master/Sorting%20and%20Searching/%EB%AE%A4%EC%A7%81%EB%B9%84%EB%94%94%EC%98%A4.java)
 - [마구간 정하기](https://github.com/gangintheremark/Algorithm/blob/master/Sorting%20and%20Searching/%EB%A7%88%EA%B5%AC%EA%B0%84%20%EC%A0%95%ED%95%98%EA%B8%B0.java)
 </br>
+
 🐸`LRU`🐸 </br>
-LRU : Least Recently Used
+LRU : Least Recently Used</br>
+
 ```java
 int pos = -1; // pos -1로 초기화하고 1.특정 위치 i로 바뀜 2. 안바뀜 
 ```

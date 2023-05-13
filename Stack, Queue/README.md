@@ -27,6 +27,7 @@ stack.size(); // stack에 있는 원소의 개수
 ```java
  while (stack.pop() != '(') ;  // '('문자가 나올때까지 스택제거
 
+// stack 값 밑에서 부터 출력
  for (int i = 0; i < stack.size(); i++)
         answer += stack.get(i);     // String 변수에 스택값 추가 
 ```
@@ -66,4 +67,11 @@ class Person {
   for (int i = 0; i < n; i++) 
         Q.add(new Person(i, arr[i]));  //offer이 아닌 add()메소드
         
+    for(Person x : Q) { // 큐 데이터 하나씩 비교해보기 
+                if (x.d > tmp.d) { // 본인보다 더 위험도가 높은 환자가 있다면
+                    Q.add(tmp); // add()메소드
+                    tmp = null;
+                    break;
+                }
+            }
 ```

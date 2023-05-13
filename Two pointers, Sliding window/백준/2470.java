@@ -7,7 +7,7 @@ public class Main {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st;
 
-        int n = Integer.parseInt(br.readLine());
+        int n = Integer.parseInt(br.readLine()); // 입력 받기
         int[] a = new int[n];
 
         st = new StringTokenizer(br.readLine());  // 한 줄 입력받고

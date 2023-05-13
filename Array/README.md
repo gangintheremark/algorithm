@@ -47,7 +47,7 @@ for (int i = 2; i < n; i++)
 int[] dx = {1, 0, 1, 0}   int[] dy = {0, 1, 0, -1} </br>
 지정 후 i,j,k 3중 for문 으로 해결 </br></br>
  
-=======
+```java
  // 소수인지 아닌지 체크
   public boolean isPrime(int num) {
         if (num == 1)
@@ -59,4 +59,3 @@ int[] dx = {1, 0, 1, 0}   int[] dy = {0, 1, 0, -1} </br>
     }
 ```
 
->>>>>>> f34ea4790b8b9d650e072646cf62a829e25fb8ee

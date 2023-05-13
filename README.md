@@ -4,7 +4,7 @@
 
 </br>
 백준 풀 때, 주의할 점 </br>
-Scanner은 입력받는데 시간 오래걸림 입력값 범위가 큰 수들은 Scanner 사용❌</br>
+Scanner은 입력받는데 오래걸림 입력값 범위가 큰 수들은 Scanner 사용❌</br>
 </br>
 input: </br>
 5</br>

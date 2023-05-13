@@ -1,6 +1,5 @@
 - [10815_숫자 카드](https://www.acmicpc.net/problem/10815)</br>
-
-HashMap 사용해서 풀기</br>
+</br>
 
 - [14425_문자열 집합](https://www.acmicpc.net/problem/14425)</br>
 
@@ -52,7 +51,7 @@ System.out.println(sb.toString());
 ```
 
 - [1764_듣보잡](https://www.acmicpc.net/problem/1764)</br>
-ArrayList 배열 오름차순,내림차순 정렬은 Collections.sort(arr) 와   Collections.sort(arr, Collections.reverseOrder()) 이용
+ArrayList 배열 오름차순,내림차순 정렬은 `Collections.sort(arr)` 와   `Collections.sort(arr, Collections.reverseOrder())` 이용
 
 - [1269_대칭차집합](https://www.acmicpc.net/problem/1269)</br>
-else map.replace(tmp, 1); put 보다 시간 더 줄이기 가능</br>
+`else map.replace(tmp, 1)` : put 보다 시간 더 줄이기 가능</br>

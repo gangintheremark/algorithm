@@ -21,6 +21,20 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
         Main T = new Main();
-        
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+        n = Integer.parseInt(br.readLine());
+        int[] a = new int[n];
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        for (int i = 0; i < n; i++) {
+            a[i] = Integer.parseInt(st.nextToken());
+        }
+        m = Integer.parseInt(br.readLine());
+        int[] b = new int [m];
+        st = new StringTokenizer(br.readLine());
+        for (int i = 0; i < m; i++) {
+            b[i] = Integer.parseInt(st.nextToken());
+        }
+        T.solution(a,b);
     }
 }

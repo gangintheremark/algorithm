@@ -66,7 +66,7 @@ else {
 ```
 
 🍓`동전교환`🍓</br>
-Collections.reverseOrder() 배열 내림차순하는 메소드 사용 시 배열은 Integer로 선언</br>
+`Collections.reverseOrder()` 배열 내림차순하는 메소드 사용 시 배열은 Integer로 선언</br>
 ```java
 Integer arr = new Integer[n]; 
 Arrays.sort(arr, Collections.reverseOrder());

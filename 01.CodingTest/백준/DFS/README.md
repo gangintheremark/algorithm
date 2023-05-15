@@ -2,7 +2,9 @@
 - [2667_단지번호 붙이기](https://www.acmicpc.net/problem/2667)
 </br>
 
-![2583_영역 구하기](https://github.com/gangintheremark/Algorithm/assets/81904943/86aa8502-37c5-4fd8-bd95-80c62bd00baf)  </br>
+![2583_영역 구하기](https://github.com/gangintheremark/Algorithm/assets/81904943/86aa8502-37c5-4fd8-bd95-80c62bd00baf) 
+
+ </br>
 
 분리된 영역과 영역의 개수 출력 </br>
 
@@ -34,7 +36,7 @@ ArrayList<Integer> areaCount = new ArrayList<>();
         }
 ```
 
-![1759_암호 만들기](https://www.acmicpc.net/problem/1759) </br>
+- [1759_암호 만들기](https://www.acmicpc.net/problem/1759) </br>
 알파벳 순으로 먼저 정렬해서 ch배열 필요없이 DFS가능 </br>
 주의할점, 모음 문자 확인할 때 x.equals("a") 로 ~~x=="a"했다가 틀림~~</br>
 ```java

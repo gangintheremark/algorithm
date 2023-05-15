@@ -42,3 +42,29 @@ for (int i = 0; i < park.length; i++) {
 // 2. Character.getNumericValue()) : 문자로 받은 숫자를 int형으로 변환
  int dist = Character.getNumericValue(routes[i].charAt(2));
 ```
+
+`바탕화면 정리` </br>
+문자열에서 "#"의 위치를 이용해서 풀었다. </br>
+시작점과 끝점이 있으면 시작점은 #이 발견된 위치가 제일 작은 수로 설정하고 끝점은 #이 발견된 위치가 제일 큰 수로 설정한다. 이중 for으로 배열 하나씩 보면서 비교했으면 더 깔끔하게 됐을듯
+```java
+// 다른사람 풀이 
+class Solution {
+    public int[] solution(String[] wallpaper) {
+        int minX = Integer.MAX_VALUE;
+        int minY = Integer.MAX_VALUE;
+        int maxX = Integer.MIN_VALUE;
+        int maxY = Integer.MIN_VALUE;
+        for(int i=0; i< wallpaper.length;i++ ){
+            for(int j=0; j<wallpaper[i].length();j++){
+                if(wallpaper[i].charAt(j)=='#'){
+                    minX = Math.min(minX,i);
+                    minY = Math.min(minY,j);
+                    maxX = Math.max(maxX,i);
+                    maxY = Math.max(maxY,j);
+                }
+            }
+        }
+        return new int[]{minX,minY,maxX+1,maxY+1};
+    }
+}
+```

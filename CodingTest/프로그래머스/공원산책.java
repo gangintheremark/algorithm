@@ -15,13 +15,10 @@ class Solution {
         int[][] board = new int[park.length][park[0].length()];
         Point pos = null;
         for (int i = 0; i < park.length; i++) {
-            for (int j = 0; j < park[0].length(); j++) {
-                if (park[i].charAt(j) == 'S') {
-                    pos = new Point(i, j); // 개의 현재위치
-                    break;
-                }
+              if (park[i].contains("S")) {
+                pos = new Point(i, park[i].indexOf("S"));
+                break;
             }
-            if (pos.x == i) break;
         }
         for (int i = 0; i < routes.length; i++) {
             Point tmp = new Point(pos.x, pos.y);

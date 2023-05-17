@@ -1,80 +1,104 @@
-`자연수 뒤집어 배열로 만들기`</br>
-자연수 자리수를 알고싶으면 문자열로 변경후 문자열 길이 이용</br>
+`stream()`
 ```java
-String str = String.valuOf(n);
-int[] answer = new int[str.length];
+/* int[] 배열 arr의 total합 */
+int sum = Arrays.stream(arr).sum();
+
+/* int[] 배열 arr의 최대값, 최소값 찾기 */
+int max = Arrays.stream(arr).max().getAsInt();
+int min = Arrays.stream(arr).min().getAsInt();
+
+/* 배열 arr의 평균값을 double형으로 return */
+double tmp = Arrays.stream(arr).average().getAsDouble(); 
 ```
-
-`나누어 떨어지는 숫자 배열` </br>
-배열을 출력해야하는데 입력값마다 출력 길이가 다를 때, count로 길이 구한 후 배열 선언해주는 방법이 있다. </br>
-
-`달리기 경주` </br>
-이중 for문으로 접근했는데 시간초과 떴다 사람과 등수, 두 연관된 데이터가 주어져서 HashMap을 이용했는데 HashMap은 key값으로 value값을 바꾸는 것은 가능하지만 value값으로 key값을 바꾸는 것은 어렵다. 따라서 key값으로 사람과 등수가 둘 다 되도록 HashMap 두 개 선언해서 바꿨다. 근데 다른 사람 풀이에 그냥 Hashmap 하나만 선언해서 불린 이름의 등수 찾은 후, 그냥 기존에 주어진 players 순서를 바꿨다. 천잰가
-```java
- public String[] solution(String[] players, String[] callings) {
-        HashMap<String, Integer> indexMap = new HashMap<>();
-
-        for (int i = 0; i < players.length; i++)
-            indexMap.put(players[i], i);
-
-
-        for (String calling : callings) {
-            int idx = indexMap.get(calling);  // 추월한 선수의 현재 등수
-
-            String temp = players[idx - 1]; // 기존의 players 배열 바꾸기
-            players[idx - 1] = players[idx];
-            players[idx] = temp;
-
-            indexMap.put(players[idx - 1], idx - 1); // 추월한 사람
-            indexMap.put(players[idx], idx); // 추월당한 사람
-
-        }
-
-        return players;
-    }
-```
-
 </br>
 
-`추억점수` </br>
-두 연관된 데이터가 주어져서 HashMap 이용 </br>
-
-`공원산책` </br>
+`valueOf()`
 ```java
-// 1. str.indexof("S");  문자열에서 "S"의 위치
-for (int i = 0; i < park.length; i++) {
-              if (park[i].contains("S")) {
-                pos = new Point(i, park[i].indexOf("S"));
-                break;
-            }
-        }
+int answer = Integer.valueOf(s); // 문자를 숫자로 변환 "
+String str = String.valuOf(n); // 숫자를 문자로 변환 1 -> "1" 
 
-// 2. Character.getNumericValue()) : 문자로 받은 숫자를 int형으로 변환
- int dist = Character.getNumericValue(routes[i].charAt(2));
+/* 문자열을 공백 기준 배열로 변환 */
+String[] arr = str.split(" "); 
+
+/* int를 String배열로 변환 */
+int n = 118372;
+String[] str = String.valueOf(n).split(""); // 118372를 String 배열로 
+```
+</br>
+
+```java
+// String[] 배열에 존재하는 숫자들 값 더하기
+String[] s = String.valueOf(n).split("");
+for(String str : s) 
+    sum += Integer.parseInt(str);
+
+// String에서 특정 문자 위치 찾기
+int index = str.indexOf("3");
+// String[] 배열에서 특정 문자열 위치 찾기
+int index = Arrays.asList(arr).indexOf("Kim");
+
+// String 문자열에서 일부분 바꾸기 -> char배열로 바꾼 후 반복문
+Char[] ch = phone_number.toCharArray();
+String str =  String.valueOf(ch); 
+```
+</br>
+
+`String 메소드`
+```java
+
+String s, s1, s2;
+        
+/* 대소문자 변환 */
+s.toUpperCase(); //대문자로
+s.toLowerCase(); //소문자로
+
+s.contains("Java"); // 해당 문자열이 포함된다면 true , 아니면 false
+        
+s.indexOf("Java"); // 처음 일치하는 위치정보 ,포함되지 않는다면 -1
+s.lastIndexOf("and"); // 마지막에 일치하는 위치정보
+
+s.startsWith("I like"); // 해당 문자열로 시작하면 true
+s.endsWith("."); // 해당 문자열로 끝나면 true
+
+s.replace("and", ","); // "and"를 ","로 변환
+s.toUpperCase().replaceAll("[^A-Z]","");  //A-Z가 아닌 것은 전부 replace
+
+s.substring(7); // index 기준 7번째 부터 시작 (이전 내용삭제)
+s.substring(s.indexOf("Java")); // "Java" 부터 시작 (이전 내용삭제)
+s.substring(s.indexOf("Java"), s.indexOf(".")); // 시작 위치부터 끝 위치 "직전까지"
+
+s.trim(); // 앞뒤 공백 모두 제거
+    
+s1.concat(",").concat(s2); // s1 , s2 결합
+
+s1.equals(s2); // 문자열 내용이 같으면 true
+s2.equalsIgnoreCase(s1); // 대소문자 구분없이 같으면 true
+
+Character.isAlphabetic(c)  // 알파벳인지
+Character.isDigit(x)  // 숫자인지
+
+// StringBuilder를 이용하여 역순으로 재배치 후 다시 String 형으로
+String tmp = new StringBuilder(str).reverse().toString();  
 ```
 
-`바탕화면 정리` </br>
-문자열에서 "#"의 위치를 이용해서 풀었다. </br>
-시작점과 끝점이 있으면 시작점은 #이 발견된 위치가 제일 작은 수로 설정하고 끝점은 #이 발견된 위치가 제일 큰 수로 설정한다. 이중 for으로 배열 하나씩 보면서 비교했으면 더 깔끔하게 됐을듯
+`최대공약수` 와 `최소공약수`
 ```java
-// 다른사람 풀이 
-class Solution {
-    public int[] solution(String[] wallpaper) {
-        int minX = Integer.MAX_VALUE;
-        int minY = Integer.MAX_VALUE;
-        int maxX = Integer.MIN_VALUE;
-        int maxY = Integer.MIN_VALUE;
-        for(int i=0; i< wallpaper.length;i++ ){
-            for(int j=0; j<wallpaper[i].length();j++){
-                if(wallpaper[i].charAt(j)=='#'){
-                    minX = Math.min(minX,i);
-                    minY = Math.min(minY,j);
-                    maxX = Math.max(maxX,i);
-                    maxY = Math.max(maxY,j);
-                }
-            }
-        }
-        return new int[]{minX,minY,maxX+1,maxY+1};
-    }
+/* 유클리드 호제법 */
+public static int gcd(int a, int b) { // 최대공약수
+    if (b == 0) return b;
+    return gcd(b, a%b);
 }
+public int[] solution (int a, int b) {
+    int[] answer = new int[2];
+
+    answer[0] = gcb(a,b);
+    answer[1] = (a*b) / answer[0];  // 최소공배수 
+    return answer;
+}
+```
+
+- 배열 뒤에 안쓰이는 초기값(0) 제거하고 싶을 때,  </br>
+```java
+int[] result = new int[count]; // arr에서 입력된 부분을 count한 수 
+System.arraycopy(arr, 0 ,result, 0, count);
 ```

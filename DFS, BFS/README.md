@@ -59,6 +59,8 @@ graph[a][b] = c;
 
 ```
 
+----
+
 #### DFS
 
 🐌`부분집합 구하기`🐌
@@ -79,6 +81,7 @@ else {
     DFS(L + 1); // 사용하지 않는다로 뻗는 함수
 }
 ```
+![image](https://github.com/gangintheremark/Algorithm/assets/81904943/af653bc5-a7a0-4855-94fe-7cfd73bf8dd3)
 
 🐌`경로탐색`🐌
 ```java
@@ -108,6 +111,8 @@ static ArrayList<ArrayList<Integer>> graph; //arraylist 속 arraylist
                 }
             }
 ```
+----
+
 
 #### BFS
 🐌`이진트리 레벨탐색`🐌
@@ -168,4 +173,22 @@ while (!Q.isEmpty()) {
 }
 ```
 
+![image](https://github.com/gangintheremark/Algorithm/assets/81904943/76a1cd06-8eec-4846-8c2d-8a7d92bf2bc5)
 
+
+🐌`그래프 최단거리`🐌
+```java
+ Queue<Node> Q = new LinkedList<>();
+Q.offer(root);
+int L = 0; // 다음 층수로 간 횟수? 거리??같은 느낌
+while (!Q.isEmpty()) {
+    int len = Q.size();
+    for (int i = 0; i < len; i++) {
+        Node x = Q.poll();
+        if (x.lt == null && x.rt == null) return L; // 말단노드면 L리턴
+        if (x.lt != null) Q.offer(x.lt);
+        if (x.rt != null) Q.offer(x.rt);
+    }
+    L++;
+}
+```

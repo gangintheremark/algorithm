@@ -56,3 +56,6 @@ ArrayList<Integer> areaCount = new ArrayList<>();
         }
     }
 ```
+
+- [1987_알파벳](https://www.acmicpc.net/problem/1987)
+한 번 나온 알파벳은 지나가면 안된다는 조건으로 char형 문자에 'A'를 빼줘 정수로 만들어서 해결하였다. ch배열로 풀어도되고 난 boolean 일차원 배열 선언해서 해결했다. 

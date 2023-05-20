@@ -38,7 +38,6 @@ ArrayList<Integer> areaCount = new ArrayList<>();
 
 - [1759_암호 만들기](https://www.acmicpc.net/problem/1759) </br>
 알파벳 순으로 먼저 정렬해서 ch배열 필요없이 DFS가능 </br>
-주의할점, 모음 문자 확인할 때 x.equals("a") 로 ~~x=="a"했다가 틀림~~</br>
 ```java
  public void DFS(int depth, int start) {
         if (depth == L) {

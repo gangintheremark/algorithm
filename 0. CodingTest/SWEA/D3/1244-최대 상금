@@ -1,0 +1,47 @@
+import java.util.*;
+
+public class Solution {
+    static int exchange, max;
+    static String[] arr;
+
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        int T = s.nextInt();
+        for (int i = 1; i <= T; i++) {
+            arr = s.next().split("");
+            exchange = s.nextInt();
+
+            max = 0;
+            if (arr.length < exchange)
+                exchange = arr.length;
+
+            DFS(0, 0);
+            System.out.printf("#%d %d\n", i, max);
+        }
+    }
+
+    public static void DFS(int start, int count) {
+        if (count == exchange) {
+            String answer = "";
+            for (String x : arr)
+                answer += x;
+            max = Math.max(max, Integer.parseInt(answer));
+            return;
+        } else {
+            for (int i = start; i < arr.length; i++) {
+                for (int j = i + 1; j < arr.length; j++) {
+                    String tmp = arr[i]; // 하나씩 SWAP해보기
+                    arr[i] = arr[j];
+                    arr[j] = tmp;
+
+                    DFS(i, count + 1); // 교환 횟수 하나 증가
+
+                    // 다시 원래 상태로 복구
+                    tmp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = tmp;
+                }
+            }
+        }
+    }
+}

@@ -1,7 +1,9 @@
 ### **정렬**
-`선택정렬` 
+
+`선택정렬`
+
 ```java
-    for (int i = 0; i < n - 1; i++) {  // i번쨰부터 
+    for (int i = 0; i < n - 1; i++) {  // i번쨰부터
         int idx = i;
         for (int j = i+1; j < n ; j++) {  // i+1 ~ n-1까지 비교 후 작으면 i번째 자리로
             if (arr[j] < arr[idx]) idx = j;
@@ -14,6 +16,7 @@
 ```
 
 `버블정렬`
+
 ```java
     for (int i = 0; i < n - 1; i++) {
         for (int j = 0; j < n - i - 1; j++) { // j가 i보다 한번씩 적게 돌아야한다.
@@ -28,6 +31,7 @@
 ```
 
 `삽입정렬`
+
 ```java
    for (int i = 1; i < n; i++) {
             int tmp = arr[i], j;  // 삽입될 값
@@ -41,13 +45,15 @@
 ```
 
 ### **이분검색** </br>
+
 **정렬**된 상태에서 검색
+
 ```java
  Arrays.sort(arr); // 정렬된 배열
 int lt = 0, rt = n - 1;  // 왼쪽 끝 lt, 오른쪽 끝 rt
 while (lt <= rt) {
     int mid = (lt + rt) / 2;
-    if (arr[mid] == m) { // 찾는 값 찾으면 return 
+    if (arr[mid] == m) { // 찾는 값 찾으면 return
         answer = mid + 1;
         break;
     }
@@ -55,30 +61,36 @@ while (lt <= rt) {
     else lt = mid + 1; // 크면 lt값 조정 (중간기준 오른쪽부분)
  }
 ```
+
 ### **결정 알고리즘** </br>
+
 lt ~ rt 사이에 찾고싶은 답이 분명히 있다라는 확신이 있는 문제에 적용
+
 - [뮤직비디오](https://github.com/gangintheremark/Algorithm/blob/master/Sorting%20and%20Searching/%EB%AE%A4%EC%A7%81%EB%B9%84%EB%94%94%EC%98%A4.java)
 - [마구간 정하기](https://github.com/gangintheremark/Algorithm/blob/master/Sorting%20and%20Searching/%EB%A7%88%EA%B5%AC%EA%B0%84%20%EC%A0%95%ED%95%98%EA%B8%B0.java)
-</br>
+  </br>
 
-🐸`LRU`🐸 </br>
+`LRU` </br>
 LRU : Least Recently Used</br>
 
 ```java
-int pos = -1; // pos -1로 초기화하고 1.특정 위치 i로 바뀜 2. 안바뀜 
+int pos = -1; // pos -1로 초기화하고 1.특정 위치 i로 바뀜 2. 안바뀜
 ```
 
-🐸`중복 확인`🐸
+`중복 확인`
+
 ```java
  Arrays.sort(arr);  // 배열 정렬 후 arr[i] arr[i+1] 확인
 ```
 
-🐸`장난꾸러기`🐸
+`장난꾸러기`
+
 ```java
 int[] tmp = arr.clone();  // clone하여 복사 후 정렬하여 비교하기
 ```
 
-🐸`좌표정렬`🐸
+`좌표정렬`
+
 ```java
 class Point implements Comparable<Point> { // 정렬하는 기준을 잡아주는 Comparable
     public int x, y;
@@ -107,8 +119,8 @@ int n = s.nextInt();
         for (Point o : arr) System.out.println(o.x + " " + o.y);
 ```
 
+`뮤직비디오` </br>
 
-🐸`뮤직비디오`🐸 </br>
 ```java
 // Arrays.stream() 메소드 사용!
  int lt = Arrays.stream(arr).max().getAsInt();  // 배열에서 최대를 int형으로 return

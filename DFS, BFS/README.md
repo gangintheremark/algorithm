@@ -46,7 +46,6 @@
 
 `넓이우선탐색(BFS, Breadth-First Search)` </br>
 - 두 노드 사이의 최단 경로 혹은 임의의 경로를 찾고 싶은 경우
-</br>
 
 - [이진트리 레벨탐색](https://github.com/gangintheremark/Algorithm/blob/master/DFS%2C%20BFS/%EC%9D%B4%EC%A7%84%ED%8A%B8%EB%A6%AC%20%EB%A0%88%EB%B2%A8%ED%83%90%EC%83%89.java)
 

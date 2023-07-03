@@ -1,6 +1,5 @@
 import java.util.*;
 
-// 메모참고
 public class Main {
     int answer = 0;
     int[] dis = {-1, 1, 5};
@@ -18,7 +17,7 @@ public class Main {
                 int x = Q.poll();
                 for (int j = 0; j < 3; j++) {
                     int nx = x + dis[j];  // nx : x의 자식노드
-                    if (nx == e) return L;  // 경로를 찾으면 return
+                    if (nx == e) return L+1;  // 경로를 찾으면 return
                     if (nx >= 1 && nx <= 10000 && ch[nx] == 0) {  // 방문 안한 것인지
                         ch[nx] = 1;
                         Q.offer(nx);

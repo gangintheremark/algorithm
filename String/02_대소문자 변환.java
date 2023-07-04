@@ -1,5 +1,3 @@
-package ch01.String;
-
 import java.util.*;
 
 public class Main {
@@ -12,6 +10,7 @@ public class Main {
             else
                 answer += Character.toUpperCase(x);
         }
+
         return answer;
     }
 
@@ -20,17 +19,6 @@ public class Main {
         Scanner s = new Scanner(System.in);
 
         String str = s.next();
-
         System.out.println(T.solution(str));
     }
 }
-
-/*
- * 아스키코드로 풀기
- * for (char x : str.toCharArray()) {
- * if (x >= 97 && x <= 122) answer += (char) (x - 32);
- * 
- * else
- * answer += (char) (x + 32);
- * }
- */

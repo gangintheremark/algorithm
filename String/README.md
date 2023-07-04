@@ -1,6 +1,6 @@
 ```java
 
-/*  String method  */
+        /*  String method  */
         String s, s1, s2;
         
         //대소문자 변환
@@ -43,25 +43,23 @@
 
 ```
 
-
 `문자찾기`
 
 ```java
 str.toUpperCase();  // String형 변수 대문자 변환한 반환값
-char c = Character.toUpperCase(c);  // char형 변수 대문자 변환한 반환값
+Character.toUpperCase(c);  // char형 변수 대문자 변환한 반환값
 s.next().charAt(0) // char 변수 입력받기
 ```
 
 `대소문자 변환`
 ```java
-String answer 👉 answer += c;
-ArrayList<String> answer 👉 anwser.add(c);
+char c; 
+String answer = ""; 👉 answer += c; 
+ArrayList<String> answer = new ArrayList<>(); 👉 anwser.add(c);
 ```
 
 `문장 속 단어찾기`
-
 ```java
-// split()
 String[] s = str.split(" "); // 공백 기준으로 문장 자르기
 ```
 

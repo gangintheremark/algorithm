@@ -1,11 +1,10 @@
-package ch01.String;
-
 import java.util.*;
 
 public class Main {
     public void solution(String str) {
         str = str.toLowerCase(); // 소문자로 바꾸기
-
+        
+        // 투 포인터 이용
         int lt = 0;
         int rt = str.length() - 1;
 

@@ -1,5 +1,3 @@
-package ch01.String;
-
 import java.util.*;
 
 public class Main {

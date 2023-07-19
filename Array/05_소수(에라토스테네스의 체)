@@ -1,0 +1,35 @@
+import java.util.*;
+
+class Main {
+        /*
+         1. ch[i] 가 0 이면 소수, 1이면 소수X
+         2. 시간을 줄이기 위해 i의 배수들은 1로 체크
+         3. 1로 체크된 i는 패스
+         👉 에라토스테네스 체
+         */
+    public int solution(int n) {
+        int answer = 0;
+        int[] ch = new int[n+1];
+        for (int i = 2; i <= n; i++) {
+            if(ch[i] == 0) {
+                answer++;
+                for (int j = i; j <=n ; j+=i) { //i의 배수니깐 i씩 증가
+                    ch[j]++;
+                }
+            }
+        }
+        return answer;
+    }
+
+    public static void main(String[] args) {
+        Main T = new Main();
+        Scanner s = new Scanner(System.in);
+
+        int n = s.nextInt();
+
+        System.out.println(T.solution(n));
+
+    }
+
+}
+

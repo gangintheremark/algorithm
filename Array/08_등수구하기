@@ -1,0 +1,27 @@
+import java.util.*;
+
+class Main {
+    
+    public static void main(String[] args) {
+        Main T = new Main();
+        Scanner s = new Scanner(System.in);
+
+        int n = s.nextInt();
+        Integer[] arr = new Integer[n];
+
+        for (int i = 0; i < n; i++) {
+            arr[i] = s.nextInt();
+        }
+
+        int answer;
+        for (int i = 0; i < n; i++) {
+            answer = 1;
+            for (int j = 0; j < n; j++) {
+                if(j != i && arr[i] < arr[j])
+                    answer++;
+            }
+            System.out.print(answer + " ");
+        }
+    }
+}
+

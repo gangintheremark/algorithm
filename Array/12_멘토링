@@ -1,0 +1,46 @@
+import java.util.*;
+
+class Main {
+
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+
+        int n = s.nextInt(); // 학생 수 (열)
+        int m = s.nextInt();  // 수학테스트 횟수 (행)
+
+        int[][] board = new int[m][n];
+        for (int i = 0; i < m; i++) { // m = 3
+            for (int j = 0; j < n; j++) { // n = 4 학생 수
+                board[i][j] = s.nextInt();
+            }
+        }
+        int count = 0;
+        for (int i = 0; i < n; i++) { // 학생 수 만큼 첫째 줄 탐색
+            int tmp = board[0][i]; // 주인공 학생
+            boolean[] flag = new boolean[n + 1];
+            int temp = i + 1; // 주인공 학생 뒤에 있는 학생부터
+            while (temp < n) {
+                flag[board[0][temp]] = true; // 멘토-멘티 관계
+                count++;
+                temp++;
+
+            }
+
+            for (int j = 1; j < m; j++) { // 두째줄 부터 탐색
+                int k = 0; // 열 탐색을 위한 초기화
+                while (board[j][k] != tmp) { // 주인공이 나오기 전까지 멘토-멘티관계인 경우는 없앤다.
+                    if (flag[board[j][k]]) {
+                        count--;
+                        flag[board[j][k]] = false;
+                    }
+                    k++;
+                }
+
+            }
+
+        }
+
+        System.out.println(count);
+    }
+}
+

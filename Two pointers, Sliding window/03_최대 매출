@@ -3,7 +3,7 @@ import java.util.*;
 /* Sliding Window */
 public class Main {
     public int solution(int n, int k, int[] arr) {
-        int answer =0, sum = 0;
+        int answer = 0, sum = 0 ;
         for (int i = 0; i < k; i++) {  // 처음 윈도우 생성
             sum += arr[i];
             answer = sum;

@@ -1,4 +1,4 @@
-`깊이우선탐색(DFS, Depth-First Search)` </br>
+### 깊이우선탐색(DFS, Depth-First Search)
 
 - 모든 노드를 방문하고자 하는 경우
 
@@ -42,14 +42,52 @@
 }
 ```
 
+`부분집합 구하기`
+
+```java
+    public void DFS(int L) { // L층 으로 생각
+        if (L == n + 1) { // 종착점에 왔을 경우,
+            String tmp = "";
+            for (int i = 1; i <= n; i++) {
+                if (ch[i] == 1) // 사용했다면
+                    tmp += (i + " ");
+            }
+            if (tmp.length() > 0)
+                System.out.println(tmp);
+        } else {
+            ch[L] = 1; // 사용한다
+            DFS(L + 1); // 사용한다로 뻗는 함수
+            ch[L] = 0; // 사용하지 않는다.
+            DFS(L + 1); // 사용하지 않는다로 뻗는 함수
+        }
+    }
+```
+
+`경로탐색`
+
+![image](https://github.com/gangintheremark/Algorithm/assets/81904943/af653bc5-a7a0-4855-94fe-7cfd73bf8dd3)
+
+```java
+    public void DFS(int v) {
+        if (v == n)
+            answer++;
+        else {
+            for (int i = 1; i <= n; i++) {
+                if (graph[v][i] == 1 && ch[i] == 0) { 
+         // v노드에서 갈 수 있는 방향인가 && 한번도 방문하지 않은 노드인가
+                    ch[i] = 1;
+                    DFS(i);
+                    ch[i] = 0; // 백하면서 체크 풀어주기
+                }
+            }
+        }
+    }
+```
+
 ---
 
 `넓이우선탐색(BFS, Breadth-First Search)` </br>
-<<<<<<< HEAD
-- 두 노드 사이의 최단 경로 혹은 임의의 경로를 찾고 싶은 경우
-=======
->>>>>>> 11cec09257da1715c5c8cc31f081d8bacc0917c1
-
+- 두 노드 사이의 최단 경로 혹은 임의의 경로를 찾고 싶은 경우 
 - 두 노드 사이의 최단 경로 혹은 임의의 경로를 찾고 싶은 경우 </br>
 
 `그래프`
@@ -69,62 +107,7 @@ graph[a][b] = c;
 
 ---
 
-#### DFS
 
-`부분집합 구하기`
-
-```java
- if (L == n + 1) { // 종착점에 왔을 경우,
-    String tmp = "";
-    for (int i = 1; i <= n; i++) {
-    if (ch[i] == 1) // 사용했다면
-        tmp += (i + " ");
-    }
-    if (tmp.length() > 0)
-        System.out.println(tmp);
-}
-else {
-    ch[L] = 1; // 사용한다
-    DFS(L + 1); // 사용한다로 뻗는 함수
-    ch[L] = 0; // 사용하지 않는다.
-    DFS(L + 1); // 사용하지 않는다로 뻗는 함수
-}
-```
-
-![image](https://github.com/gangintheremark/Algorithm/assets/81904943/af653bc5-a7a0-4855-94fe-7cfd73bf8dd3)
-
-`경로탐색`
-
-```java
-for (int i = 1; i <= n; i++) {
-    if (graph[v][i] == 1 && ch[i] == 0) {
-    // v노드에서 갈 수 있는 방향인가 && 한번도 방문하지 않은 노드인가
-        ch[i] = 1; // 방문표시
-        DFS(i);  // recursion
-        ch[i] = 0; // Back 하면서 체크 풀어주기
-    }
-}
-```
-
-`경로탐색(인접리스트)`
-
-```java
-static ArrayList<ArrayList<Integer>> graph; //arraylist 속 arraylist
- graph = new ArrayList<ArrayList<Integer>>(); // graph 객체 생성
-    for (int i = 0; i <= n; i++) {
-        graph.add(new ArrayList<Integer>()); // 객체 생성
-    }
-// ...
- for (int nv : graph.get(v)) { // v번이 갈 수 있는 리스트
-                if (ch[nv] == 0) { // 방문안했으면
-                    ch[nv] = 1; // 방문 표시
-                    DFS(nv); // recursion
-                    ch[nv] = 0; // Back 하면서 체크 풀어주기
-                }
-            }
-```
-
----
 
 #### BFS
 

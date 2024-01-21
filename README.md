@@ -4,8 +4,6 @@
 
 </br>
 
-Scanner, System.out.print 는 오래걸림 입력값 범위가 큰 수들은 사용❌</br>
-
 ```java
 import java.io.*;
 
